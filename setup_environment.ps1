@@ -5,9 +5,15 @@ python -m venv venv
 .\venv\Scripts\Activate
 
 # Install required packages
-pip install pandas numpy jupyter
+pip install -r requirements.txt
+
+# Set up the database
+python main.py setup
 
 # Verify installations
-python -c "import pandas; import numpy; import jupyter; print('All packages installed successfully!')"
+python -c "import pandas; import numpy; import sqlite3; print('All packages installed successfully!')"
 
-Set-Location "C:\Users\karng\Desktop\HSN-Code-Validation-Agent" 
+Write-Host "Environment setup complete. You can now use the HSN Code Validation Agent."
+Write-Host "To run the agent in interactive mode, use: python main.py interactive"
+
+Set-Location "C:\Users\karng\Desktop\HSN-Code-Validation-Agent"
